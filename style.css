@@ -1,0 +1,121 @@
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(100px, 1fr));
+  grid-template-rows: repeat(3, minmax(100px, 1fr));
+  gap: 10px;
+  border: 2px solid #333;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  animation: scaleIn 0.5s ease;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3em;
+  cursor: pointer;
+  background-color: #dee2e6;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.box:hover {
+  transform: scale(1.1);
+}
+
+.msg-container {
+  margin-top: 20px;
+  text-align: center;
+  animation: slideIn 0.5s ease;
+}
+
+.msg-win {
+  font-size: 1.2em;
+  color: #212529;
+}
+
+.hide {
+  display: none;
+}
+
+.resetBtn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1em;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.resetBtn:hover {
+  background-color: #0056b3;
+}
+
+/* Animation Keyframes */
+@keyframes scaleIn {
+  from {
+      transform: scale(0);
+  }
+  to {
+      transform: scale(1);
+  }
+}
+
+@keyframes slideIn {
+  from {
+      opacity: 0;
+      transform: translateY(-20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+/* Add this CSS for celebration animation */
+@keyframes celebrate {
+  0% {
+      transform: translateY(-10px) rotate(0deg);
+  }
+  25% {
+      transform: translateY(-20px) rotate(5deg);
+  }
+  50% {
+      transform: translateY(-30px) rotate(-5deg);
+  }
+  75% {
+      transform: translateY(-20px) rotate(5deg);
+  }
+  100% {
+      transform: translateY(-10px) rotate(0deg);
+  }
+}
+
+.msg-win {
+  font-size: 1.2em;
+  color: #212529;
+  animation: celebrate 1s ease infinite;
+}
